@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/08/29 13:38:29 by fschuber          #+#    #+#             */
+/*   Updated: 2014/08/29 14:08:45 by fschuber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void ft_putchar (char);
+void ft_print_combn(int n);
+
+void ft_putchar (char c)
+{
+    write(1, &c, 1);
+}
+
+void ft_print_combn(int n){
+	int count = 0;
+	char output = '0';
+	char temp;
+	char firstchar;
+	while (
+}

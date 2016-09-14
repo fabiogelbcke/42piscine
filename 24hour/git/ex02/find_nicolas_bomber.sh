@@ -1,0 +1,1 @@
+cat $1 | grep -i '^Nicolas' | grep -i "nicolas" | grep -i "bomber"| cut -d "	" -f3- | cut -d "	" -f1 | egrep '([0-9].*){10}' | egrep -v '(^|[ \t])[0-9]{1,3}(\.[0-9]{1,3}){3}([ \t]|$)'

@@ -1,0 +1,77 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   colle00.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: plavaux <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/08/31 00:07:56 by plavaux           #+#    #+#             */
+/*   Updated: 2014/09/14 08:12:35 by fschuber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <stdlib.h>
+#include <stdio.h>
+/*void	ft_putchar(char c);
+
+void	ft_print(int col, int x, char start, char end)
+{
+	if (col == 0)
+		ft_putchar(start);
+	else if (col == x - 1)
+		ft_putchar(end);
+	else
+		ft_putchar('-');
+		}*/
+
+void	output_colle(char **answer, int row, int x, int y)
+{
+	int col;
+	char *ptr;
+
+	ptr = *answer;
+	col = 0;
+	while (col < x)
+	{
+
+		//	if (row == 0 || row == y - 1)
+		//	ft_print(col, x, 'o', 'o');
+		//	else
+		//	{
+		if ((col == 0) || (col == x - 1))
+		{
+			*ptr  = (row == 0 || row == y - 1) ? 'o' : '|';
+			ptr++;
+
+		}
+		else
+		{
+			*ptr = (row == 0 || row == y - 1) ? '-' : ' ';
+
+			ptr++;
+
+		}
+		//	}
+		col++;
+	}
+}
+
+char	*colle(int x, int y)
+{
+	int row;
+	char *answer;
+	char *ptr;
+
+	answer = malloc(sizeof(char)*(x * y + y + 1));
+	ptr = answer;
+	row = 0;
+	while (row < y)
+	{
+		output_colle(&answer, row, x, y);
+		answer += y+2;
+		*answer = 10;
+		answer++;
+		row++;
+	}
+	*answer = '\0';
+	return ptr;
+}

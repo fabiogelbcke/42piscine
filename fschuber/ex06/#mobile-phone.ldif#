@@ -1,0 +1,4 @@
+dn: uid=fschuber,ou=people,dc=42,dc=en
+changetype: modify
+replace: mobile-phone
+mobile-phone: "5521981156688"

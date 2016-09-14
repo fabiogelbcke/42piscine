@@ -1,0 +1,1 @@
+cat contacts_easy.txt | grep -i '^Bomber\|^Nicolas' | grep -i "nicolas\|nick" | grep -i "bomber"

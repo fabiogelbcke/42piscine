@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/09/01 18:05:09 by fschuber          #+#    #+#             */
+/*   Updated: 2014/09/01 18:14:46 by fschuber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <stdio.h>
+
+int ft_strlen(char *str)
+{
+	int length;
+
+	while (*str)
+	{
+		length++;
+		str++;
+	}
+	return (length);
+}
+
+int main(void)
+{
+	printf("%d", ft_strlen("heeeey"));
+	return (0);
+}

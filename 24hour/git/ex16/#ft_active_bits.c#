@@ -1,0 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_active_bits.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/09/12 10:42:00 by fschuber          #+#    #+#             */
+/*   Updated: 2014/09/12 11:27:13 by fschuber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <stdio.h>
+
+unsigned int	ft_active_bits(int value)
+{
+	char bin[30];
+	unsigned int factor;
+	int i;
+
+	i = 0;
+	factor = 1073741824;
+	while (factor != 0)
+	{
+		bin[i] = value / factor;
+		value = value - bin[i] * factor;
+		factor = factor / 2;
+		i++;
+	}
+	i = 0 ;
+	while (i < 32)
+	{
+		if (bin[i] == 1)
+			factor++;
+		i++;
+	}
+	return factor;
+}

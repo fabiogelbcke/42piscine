@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   project.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/09/14 03:49:50 by fschuber          #+#    #+#             */
+/*   Updated: 2014/09/14 06:07:16 by fschuber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+
+int get_sizes(char *image, int which)
+{
+	char *ptr;
+	int x;
+	int y;
+	int answer;
+
+	x = 0;
+	y = 0;
+	ptr = image;
+	while(*(ptr++) != '\n')
+		x++;
+	ptr = image;
+	while (*ptr)
+	{
+		if (*ptr = '\n')
+			y++;
+		ptr++;
+	}
+	return which ? y : x;
+}
+
+int main (int argc, char **argv)
+{
+	int i;
+	char buffer[2000];
+
+	i = 0;
+	read(0, buffer, 2000);
+	while(buffer[i])
+		printf("%d ", buffer[i++]);
+//	printf("%d %d", get_sizes(buffer, 0), get_sizes(buffer, 1));
+	return 0;
+}

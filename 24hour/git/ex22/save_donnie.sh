@@ -1,0 +1,1 @@
+alias rm="echo Yippie-kay-yay, motherf***** - John McClane in Die Hard"

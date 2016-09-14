@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split_whitespaces.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/09/05 23:17:01 by fschuber          #+#    #+#             */
+/*   Updated: 2014/09/05 23:40:13 by fschuber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <stdlib.h>
+
+char		**ft_split_whitespaces(char *str)
+{
+	char	*ptr;
+	int		i;
+	int		j;
+	char	**wordtable;
+
+	i = 0;
+	j = 0;
+	ptr = str;
+	while (*(ptr++))
+		i++;
+	wordtable = (char*)malloc(sizeof(char) * i);
+	ptr = str;
+	while (*ptr)
+	{
+		if (*ptr == 9 || *ptr == 32 || *ptr == 12)
+		{
+			if (j > 0 || i > 0)
+				wordtable[++j][i] = '\0';
+			i = 0;
+		}
+		else
+			wordtable[j][i++] = *ptr;
+		ptr++;
+	}
+	return (wordtable);
+}

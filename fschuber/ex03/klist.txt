@@ -1,0 +1,5 @@
+Credentials cache: API:11338
+        Principal: fschuber@42.FR
+
+  Issued                Expires               Principal
+Aug 26 18:27:29 2014  Sep  2 18:27:23 2014  krbtgt/42.FR@42.FR
